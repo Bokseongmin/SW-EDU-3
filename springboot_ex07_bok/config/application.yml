@@ -1,0 +1,30 @@
+server:
+  port: 8877
+ 
+# DataSource 설정
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+
+# JPA 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        
+# Logging Level 설정
+logging:
+  level:
+    org:
+      hibernate: info
+# 동일한 설정 : '[org.hibernate]' : info
+springframework:
+  security: debug
